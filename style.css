@@ -1,0 +1,564 @@
+﻿/* A Modern CSS Reset */
+
+*, *::before, *::after {
+    box-sizing: border-box
+}
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+    margin: 0
+}
+
+ul[role="list"], ol[role="list"] {
+    list-style: none
+}
+
+html:focus-within {
+    scroll-behavior: smooth
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto
+}
+
+img, picture {
+    max-width: 100%;
+    display: block
+}
+
+input, button, textarea, select {
+    font: inherit
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html:focus-within {
+        scroll-behavior: auto
+    }
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important
+    }
+}
+
+/* ここから記述 */
+
+.wrapper {
+    overflow: hidden;
+}
+
+.header {
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    height: 60px;
+    width: 90%;
+    justify-content: space-between;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgb(200, 200, 200);
+    left: 5%;
+}
+
+.header-logo {
+    position: relative;
+    z-index: 30;
+    width: 100px;
+    height: 50px;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.header-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu input, .menu-btn-label {
+    display: none;
+}
+
+.menu {
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls {
+    display: flex;
+}
+
+.control {
+    list-style-type: none;
+    margin-right: 40px;
+    padding: 6px 15px;
+    border: 5px dotted #8D4F7A;
+    font-weight: bold;
+    /* transition: border .5s ease-in; */
+    border-radius: 4px;
+}
+.control a{
+    text-decoration: none;
+
+}
+
+.control:hover {
+    border: 5px solid #7D4F7A;
+}
+
+/* 共通 */
+
+.container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* メイン */
+
+main {
+    background-color: #FEFCAD;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 5px 5px 20px rgb(150, 150, 200) inset;
+}
+
+.main-img {
+    transform: scalex(15deg);
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-img img {
+    height: 100%;
+    position: absolute;
+    left: -13%;
+    object-fit: cover;
+}
+
+.main-img * {
+    transform: skewX(-15deg);
+}
+
+.main-discription {
+    margin: 15% auto;
+    width: 45%;
+    font-size: 20px;
+}
+
+.main-discription h1 {
+    padding-bottom: 10px;
+    margin-right: 100px;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #000;
+    border-right: 3px solid #000;
+    box-shadow: 6px 12px rgb(150, 150, 200);
+}
+
+.main-discription p {
+    line-height: 2;
+}
+
+.main-discription p span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* スキル */
+
+.skill-container {
+    background-color: #f5f5f5;
+}
+
+.section-title {
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.section-title h2 {
+    font-weight: bold;
+    font-size: 45px;
+    padding-bottom: 10px;
+    border-bottom: 6px solid #888;
+}
+
+.section-title p {
+    font-size: 16px;
+    color: #888;
+    margin: 10px auto;
+    margin-bottom: 20px;
+}
+
+.skills {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.skill-card {
+    background-color: #7D4F7A;
+    width: calc(20% - 20px);
+    color: #fff;
+    align-self: flex-start;
+    transition: all .3s;
+    position: relative;
+}
+
+.skill-card:hover {
+    box-shadow: 5px 5px 8px 5px rgb(200, 200, 200);
+}
+
+.skill-card p {
+    text-align: center;
+}
+
+.skill-card .skill-card-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.skill-card img {
+    width: 60%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.skill-card:hover img {
+    /* box-shadow: 5px 5px 8px 5px rgb(100, 100, 100); */
+    filter: drop-shadow(5px 5px 8px 5px rgb(200, 100, 100));
+}
+
+.skill-description {
+    font-size: 12px;
+    width: 80%;
+    margin: 0 auto;
+    word-break: normal;
+    padding-bottom: 20px;
+}
+
+.skill-card5 img {
+    filter: invert(100%) sepia(94%) saturate(17%) hue-rotate(325deg) brightness(103%) contrast(100%);
+}
+
+/* ワーク */
+
+.work-container {
+    width: 100%;
+    background-color: #FEFCAD;
+    box-shadow: 0px 5px 20px rgb(150, 150, 200) inset;
+}
+
+.works {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.site {
+    width: calc(40% - 25px);
+    background-color: #fff;
+    border-radius: 2px;
+    margin: 0 20px;
+    box-shadow: 5px 5px 20px 10px #bbb;
+}
+
+.site img {
+    width: 100%;
+    min-height: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.site .site-title {
+    min-height: 40px;
+    height: 20%;
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+    color: #666;
+}
+
+.site-title a {
+    vertical-align:middle;
+    position: relative;
+    top: 10%;
+    transform: translateY(-13%);
+    text-decoration: none;
+}
+
+/* お問い合わせ */
+
+.contact {
+    background-color: #f5f5f5;
+}
+
+.form {
+    width: 100%;
+    margin: 90px auto;
+    text-align: center;
+}
+
+.form .contact-content {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #888;
+    width: 20%;
+    min-width: 300px;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.form p::before {}
+
+.form input,.form textarea {
+    width: 24%;
+    min-width: 350px;
+    margin-bottom: 50px;
+    border: 1px solid #aaa;
+    padding-left: 10px;
+}
+
+.contact-textbox {
+    height: 10rem;
+    min-width: 450px;
+    text-align: 1.7;
+}
+
+.sent {
+    display: block;
+    width: 40%;
+    max-width: 500px;
+    margin: 0 auto;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #7d4f7a;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 25px;
+    border-radius: 4px;
+}
+
+footer {
+    background-color: #7D4F7A;
+    height: 40px;
+    text-align: center;
+}
+
+footer .copyRight {
+    color: #fff;
+    width: 100%;
+    margin: auto auto;
+}
+
+@media screen and (max-width: 960px) {
+    .main-discription h1 {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        /* overflow: hidden; */
+    }
+    .container {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    /* ヘッダー部 */
+    .header {
+        width: 100%;
+        left: 0;
+    }
+    .header-logo{
+margin-left: 20px;
+    }
+    .menu {
+        margin-right: 20px;
+        display: block;
+        z-index: 11;
+        align-self: flex-start;
+    }
+    #menu-btn-check {
+        display: none;
+    }
+    .menu-btn-label {
+        position: absolute;
+        right: 0px;
+        width: 50px;
+        height: 50px;
+        display: block;
+    }
+    .menu .line {
+        width: 40px;
+        height: 5px;
+        background-color: #000;
+        transition: all .5s;
+    }
+    .line:nth-child(1) {
+        position: absolute;
+        top: 10px;
+    }
+    .line:nth-child(2) {
+        position: absolute;
+        top: 25px;
+    }
+    .line:nth-child(3) {
+        position: absolute;
+        top: 40px;
+    }
+    .menu-contents {
+        display: block;
+        position: fixed;
+        background-color: rgba(245, 245, 245, .9);
+        left: 100%;
+        transition: all .5s;
+        top: 60px;
+        height: 150%;
+        z-index: 9;
+        width: 100vw;
+    }
+    .menu-contents ul {
+        margin: 0;
+    }
+    .controls {
+        display: block;
+    }
+    .control {
+        margin-bottom: 30px;
+        border: none;
+        font-size: 25px;
+    }
+
+    .control::before{
+        content: "▶";
+        color: #8D4F7A;
+        position: relative;
+        right: 15px;
+    }
+    .menu-contents .controls {
+        display: block;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    /* チェック後 */
+    #menu-btn-check:checked~.menu-btn-label .line1 {
+        top: 25px;
+        transform: rotate(45deg);
+    }
+    #menu-btn-check:checked~.menu-btn-label .line2 {
+        transform: rotatey(90deg);
+    }
+    #menu-btn-check:checked~.menu-btn-label .line3 {
+        transform: rotate(-45deg);
+        top: 25px;
+    }
+    #menu-btn-check:checked~.menu-contents {
+        display: block;
+        left: 0;
+    }
+    /* メイン部 */
+    main {
+        flex-wrap: wrap;
+    }
+    .main-img {
+        width: 100%;
+        height: 500px;
+        overflow: visible;
+    }
+    .main-img img {
+        width: 100%;
+        transform: skewX(0);
+        object-fit: cover;
+        position: static;
+        left: 0;
+    }
+    .main-discription {
+        width: 100%;
+        margin: 50px 20px;
+        margin-bottom: 100px;
+    }
+    .main-discription h1 {
+        font-size: 35px;
+        margin-bottom: 40px;
+    }
+    .section-title {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 80px;
+        text-align: center;
+    }
+    .section-title h2 {
+        font-size: 40px;
+        padding-bottom: 10px;
+    }
+    .section-title p {
+        font-size: 16px;
+    }
+    /* スキル部 */
+    .skills {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .skill-card {
+        background-color: #7D4F7A;
+        width: calc(100% - 140px);
+        max-width: 300px;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    .skill-card .skill-card-title {
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+    .skill-card img {
+        width: 50%;
+        margin-bottom: 15px;
+    }
+    .skill-card .skill-description {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+    /* ワーク部分 */
+    .site {
+        width: calc(100% - 80px);
+        margin-bottom: 50px;
+    }
+    .site .site-title {
+        display: block;
+        padding-bottom: 15px;
+    }
+    /*お問い合わせ  */
+    .form .contact-content {
+        width: 80%;
+    }
+    .form input ,.form textarea {
+        width: 80%;
+        min-width: 150px;
+        max-width: 300px;
+    }
+}
